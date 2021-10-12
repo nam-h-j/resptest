@@ -24,6 +24,13 @@ const makeList = (text) => {
   ul.appendChild(listNode(textNode(text)));
 };
 
+const viewPort = (content) => {
+  var meta = document.createElement("meta");
+  meta.name = "viewport";
+  meta.content = content;
+  document.head.appendChild(meta);
+};
+
 window.addEventListener("load", function () {
   if (md.mobile() === null) {
     for (let i = 0; i < 8; i++) {
@@ -31,6 +38,7 @@ window.addEventListener("load", function () {
     }
   } else {
     for (let i = 0; i < 10; i++) {
+      viewPort("width=device-width,initial-scale=1,user-scalable=no");
       makeList("you in Mobile");
     }
   }
