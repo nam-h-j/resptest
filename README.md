@@ -1,18 +1,10 @@
 # resptest
-responsive test and guideline(auto scale using min-width to html, body)
 
+responsive test and guideline(auto scale using min-width to html, body)
 
 ## Step1 Checking device is PC or Mobile
 
-```
-const isDesktop = () => {
-  return (
-    "win16|win32|win64|windows|mac|macintel|linux|freebsd|openbsd|sunos".indexOf(
-      navigator.platform.toLowerCase()
-    ) >= 0
-  );
-};
-```
+Using Mobile Dectect
+Mobile Detect:[http://hgoebl.github.io/mobile-detect.js/]
 
-
-## Step2 Adding break point for Mobile 
+## Step2 Adding break point for Mobile
