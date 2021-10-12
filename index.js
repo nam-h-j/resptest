@@ -1,8 +1,8 @@
 window.addEventListener("load", function () {
   if (md.mobile() === null) {
-    alert("you in Mobile");
-  } else {
     alert("you in PC");
+  } else {
+    alert("you in Mobile");
   }
 });
 
