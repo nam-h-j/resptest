@@ -1,12 +1,27 @@
 var md = new MobileDetect(navigator.userAgent);
 
-const makeList = (device) => {
-  let node = document.createElement("li");
-  let textnode = document.createTextNode(device);
-  let ul = document.getElementById("contents");
-  node.appendChild(textnode);
+const makeNode = (nodeName) => {
+  let node = document.createElement(nodeName);
+  return node;
+};
 
-  ul.appendChild(node);
+const appendNode = (nodeName, childNode) => {
+  let node = makeNode(nodeName);
+  node.appendChild(childNode);
+  return node;
+};
+
+const textNode = (text) => {
+  return document.createTextNode(text);
+};
+
+const listNode = (children) => {
+  return appendNode("li", appendNode("p", children));
+};
+
+const makeList = (text) => {
+  let ul = document.getElementById("contents");
+  ul.appendChild(listNode(textNode(text)));
 };
 
 window.addEventListener("load", function () {
